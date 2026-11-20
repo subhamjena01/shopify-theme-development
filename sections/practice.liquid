@@ -7,6 +7,7 @@
     <p>Old price: {{ product.compare_at_price }}</p>
     <p>Available: {{ product.available }}</p>
     <p>Link:{{ product.url }}</p>
+    {{ product.featured_image | image_url: width: 400, height: 400 | image_tag }}
 
 </div>
 {% schema %}
