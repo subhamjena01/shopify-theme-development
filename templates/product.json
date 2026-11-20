@@ -99,15 +99,17 @@
         "padding_bottom": 28
       }
     },
-    "practice_r4i9NJ": {
+    "practice_XAz766": {
       "type": "practice",
-      "name": "Practice section",
-      "settings": {}
+      "name": "Practice",
+      "settings": {
+        "heading": "hello all"
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "practice_r4i9NJ"
+    "practice_XAz766"
   ]
 }
