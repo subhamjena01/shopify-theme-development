@@ -14,7 +14,7 @@
         <p>Sold out</p>
   {% endif %}
 
-  <p>{{ product.price }}</p>
+  <p>{{ product.price | money}}</p>
   {% if product.compare_at_price > product.price  %}
     <p><s>{{ product.compare_at_price | money }}</s></p>
     
