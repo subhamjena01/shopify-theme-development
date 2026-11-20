@@ -16,7 +16,12 @@
 
   <p>{{ product.price | money}}</p>
   {% if product.compare_at_price > product.price  %}
+
     <p><s>{{ product.compare_at_price | money }}</s></p>
+    <p>
+        {%  assign saving = product.compare_at_price | minus: product.price %}
+        {% assign percent = saving | times: 100 | didivided_by:  product.compare_at_price%}
+    </p>
     
   {% endif %}
 </div>
