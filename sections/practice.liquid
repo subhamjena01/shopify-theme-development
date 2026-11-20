@@ -7,11 +7,12 @@
   <p>vendor: {{ product.vendor }}</p>
 </div>
 
-{% if product.available %}
+<div>{% if product.available %}
     <p>in stock</p>
 {% else %}
     <p> Sold out</p>
 {% endif %}
+</div>
 {% schema %}
 {
   "name": "Practice",
