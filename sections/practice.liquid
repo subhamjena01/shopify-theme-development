@@ -2,7 +2,7 @@
 {{ product.featured_image | image_url: width: 300 | image_tag  }}
 <h2>{{ product.title | upcase }}</h2>
 <p>Price: {{ product.price | money }}</p>
-<p>old price {{ product.compare_at_price | money }}</p>
+<p>old price: {{ product.compare_at_price | money }}</p>
 <p>vender: {{ product.vendor }}</p>
 </div>
 {% schema %}
