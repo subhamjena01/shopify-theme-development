@@ -21,7 +21,7 @@
       
         {%  assign saving = product.compare_at_price | minus: product.price %}
         {% assign percent = saving | times: 100 | divided_by: product.compare_at_price%}
-    <span>{{ percent }}%</span>
+    <span>save {{ percent }}%</span>
     
   {% endif %}
 </div>
