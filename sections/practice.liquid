@@ -13,6 +13,11 @@
     {% else %}
         <p>Sold out</p>
   {% endif %}
+
+  {% if product.compare_at_price > product.price  %}
+    <p><s>{{ product.compare_at_price }}</s></p>
+    
+  {% endif %}
 </div>
 {% schema %}
 {
