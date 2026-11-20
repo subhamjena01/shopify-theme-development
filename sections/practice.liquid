@@ -1,14 +1,9 @@
 <div style="padding:40px;">
-  <h2>My Practice area</h2>
-  <h2>{{ product.title }}</h2>
-  <p>{{ product.price | money }}</p>
-  <p>vendor: {{ product.vendor }}</p>
-  <p>type: {{ product.type }}</p>
-  <p>Old price: {{ product.compare_at_price }}</p>
-  <p>Available: {{ product.available }}</p>
-  <p>Link:{{ product.url }}</p>
-  {{ product.featured_image | image_url: width: 400 | image_tag }}
-  <h2>{{ section.settings.heading }}</h2>
+{{ product.featured_image | image_url: width: 300 | image_tag  }}
+{{ product.title | upcase }}
+Price: {{ product.price | money }}
+old price {{ product.compare_at_price | money }}
+vender: {{ product.vendor }}
 </div>
 {% schema %}
 {
