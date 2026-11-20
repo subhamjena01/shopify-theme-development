@@ -1,32 +1,30 @@
 <div style="padding:40px;">
   <h2>My Practice area</h2>
   <h2>{{ product.title }}</h2>
-    <p>{{ product.price | money }}</p>
-    <p>vendor: {{ product.vendor}}</p>
-    <p>type: {{ product.type }}</p>
-    <p>Old price: {{ product.compare_at_price }}</p>
-    <p>Available: {{ product.available }}</p>
-    <p>Link:{{ product.url }}</p>
-    {{ product.featured_image | image_url: width: 400, height: 400 | image_tag }}
-
+  <p>{{ product.price | money }}</p>
+  <p>vendor: {{ product.vendor }}</p>
+  <p>type: {{ product.type }}</p>
+  <p>Old price: {{ product.compare_at_price }}</p>
+  <p>Available: {{ product.available }}</p>
+  <p>Link:{{ product.url }}</p>
+  {{ product.featured_image | image_url: width: 400, height: 400 | image_tag }}
 </div>
 {% schema %}
 {
-    "name": "Practice",
-    "presets": [
+  "name": "Practice",
+  "settings": [
     {
-        "name": "Practice"
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "hello"
     }
-    ],
-    "settings":[
+  ],
+  "presets": [
     {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "hello"
-        
+      "name": "Practice"
     }
-    ]
-
+  ]
+  
 }
 {% endschema %}
