@@ -24,7 +24,7 @@
     <span>save {{ percent }}%</span>
     
   {% endif %}
-  {% if product.tags == bestseller %}
+  {% if product.tags contains 'bestseller' %}
     <p>Bestsellers</p>
    {% else %}
     <p>General</p> 
