@@ -8,6 +8,7 @@
   <p>Available: {{ product.available }}</p>
   <p>Link:{{ product.url }}</p>
   {{ product.featured_image | image_url: width: 400, height: 400 | image_tag }}
+  <h2>{{ section.settings.heading }}</h2>
 </div>
 {% schema %}
 {
