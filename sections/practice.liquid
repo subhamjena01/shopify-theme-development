@@ -9,6 +9,8 @@
     {% for item in section.settings.my_collection.products limit: 8 %}
       {% comment %} <p>{{ forloop.index }}. {{ item.title }}</p> {% endcomment %}
       {% render 'practice-card', product: item %}
+      {% else %}
+  <p>No products found. Please choose a collection.</p>
     {% endfor %}
   </div>
 </div>
