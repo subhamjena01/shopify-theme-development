@@ -39,6 +39,15 @@
   {% for variant in product.variants %}
     <p>{{ variant.title }}</p>
   {% endfor %}
+
+  {%  for variant in product.variants %}
+    <p>
+        {{ product.title }} - {{ product.price | money }}
+        {% unless variant.available %}
+          (sold out)
+        {% endunless %}
+    </p>
+    {% endfor %}
 </div>
 {% schema %}
 {
