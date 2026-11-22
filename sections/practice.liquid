@@ -10,24 +10,24 @@
 <div style="padding:40px;">
   {% if product.available %}
     <p>in stock</p>
-    {% else %}
-        <p>Sold out</p>
+  {% else %}
+    <p>Sold out</p>
   {% endif %}
 
-  <p>{{ product.price | money}}</p>
-  {% if product.compare_at_price > product.price  %}
+  <p>{{ product.price | money }}</p>
+  {% if product.compare_at_price > product.price %}
+    <p>
+      <s>{{ product.compare_at_price | money }}</s>
+    </p>
 
-    <p><s>{{ product.compare_at_price | money }}</s></p>
-      
-        {%  assign saving = product.compare_at_price | minus: product.price %}
-        {% assign percent = saving | times: 100 | divided_by: product.compare_at_price%}
+    {% assign saving = product.compare_at_price | minus: product.price %}
+    {% assign percent = saving | times: 100 | divided_by: product.compare_at_price %}
     <span>save {{ percent }}%</span>
-    
   {% endif %}
   {% if product.tags contains 'bestseller' %}
     <p>Bestsellers</p>
-   {% else %}
-    <p>General</p> 
+  {% else %}
+    <p>General</p>
   {% endif %}
 </div>
 {% schema %}
