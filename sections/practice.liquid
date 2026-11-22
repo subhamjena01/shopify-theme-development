@@ -29,6 +29,10 @@
   {% else %}
     <p>General</p>
   {% endif %}
+
+  <h2>All Images</h2>
+  {for Images in product.Images}
+  {{ images | image_url: width: 400 | image_tag  }}
 </div>
 {% schema %}
 {
