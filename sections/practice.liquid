@@ -34,7 +34,7 @@
   {% for image in product.images %}
     {% if forloop.first %}
       {{ image | image_url: width: 400 | image_tag }}
-      {else}
+    {% else %}
       {{ image | image_url: width: 100 | image_tag }}
     {% endif %}
   {% endfor %}
