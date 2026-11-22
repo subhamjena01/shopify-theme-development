@@ -22,7 +22,7 @@
 
     {% assign saving = product.compare_at_price | minus: product.price %}
     {% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price %}
-    <span>save {{ percent }}%</span>
+    <span>save {{ percent | round: 1}}%</span>
   {% endif %}
   {% if product.tags contains 'bestseller' %}
     <p>Bestsellers</p>
