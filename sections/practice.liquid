@@ -22,7 +22,7 @@
 
     {% assign saving = product.compare_at_price | minus: product.price %}
     {% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price %}
-    <span>save {{ percent | round: 1}}%</span>
+    <span>save {{ percent | round: 1 }}%</span>
   {% endif %}
   {% if product.tags contains 'bestseller' %}
     <p>Bestsellers</p>
@@ -32,13 +32,12 @@
 
   <h3>All Images</h3>
   {% for images in product.images %}
-   {{ images | image_url: width: 100 | image_tag  }} 
+    {{ images | image_url: width: 100 | image_tag }}
   {% endfor %}
-  
+
   <h3>All variant Images</h3>
-  {% for variant in product.variants %}
-    <p>{{ variant.title }}</p>
-    
+  {% for xxx in product.variants %}
+    <p>{{ xxx.title }}</p>
   {% endfor %}
 </div>
 {% schema %}
