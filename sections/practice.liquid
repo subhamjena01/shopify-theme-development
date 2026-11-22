@@ -31,8 +31,10 @@
   {% endif %}
 
   <h2>All Images</h2>
-  {for Images in product.Images}
-  {{ images | image_url: width: 400 | image_tag  }}
+  {% for images in product.images %}
+   {{ images | image_url: width: 400 | image_tag  }} 
+  {% endfor %}
+  
 </div>
 {% schema %}
 {
