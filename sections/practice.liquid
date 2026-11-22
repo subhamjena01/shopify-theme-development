@@ -61,7 +61,7 @@
        </p>
        
         {% for variant in product.variants %}
-          <p>{{ forloop.index }}.{{ product.title }}</p>
+          <p>{{ forloop.index }}.{{ variant.title }}</p>
         {% endfor %}
        
 </div>
