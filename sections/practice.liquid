@@ -42,7 +42,7 @@
 
   {%  for variant in product.variants %}
     <p>
-        {{ product.title }} - {{ product.price | money }}
+        {{ variant.title }} - {{ variant.price | money }}
         {% unless variant.available %}
           (sold out)
         {% endunless %}
