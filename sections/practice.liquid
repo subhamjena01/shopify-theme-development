@@ -4,6 +4,8 @@
   </h2>
   {% assign message = 'Hello from section' %}
   {% render 'practice-card', message: message %}
+
+  <p>collection name: {{ section.settings.my_collection.title }}</p>
 </div>
 
 {% comment %}
