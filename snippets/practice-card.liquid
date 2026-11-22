@@ -1,7 +1,7 @@
 {% comment %} <p>Message: {{ message }}</p> {% endcomment %}
 <div>
 
-  {{ product.featured_image | image_url: width: 300 | image_tag }}
+  {{ product.featured_image | image_url: width: auto | image_tag }}
 
   <h3>{{ product.title }}</h3>
 
