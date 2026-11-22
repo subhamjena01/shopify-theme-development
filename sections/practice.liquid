@@ -35,6 +35,11 @@
    {{ images | image_url: width: 100 | image_tag  }} 
   {% endfor %}
   
+  <h3>All variant Images</h3>
+  {% for images in product.variants %}
+    <p>{{ variant.title }}</p>
+    
+  {% endfor %}
 </div>
 {% schema %}
 {
