@@ -1,0 +1,17 @@
+<div style="border:1px solid #ddd; padding:16px; width:300px;">
+
+  {{ product.featured_image | image_url: width: 300 | image_tag }}
+
+  <h3>{{ product.title }}</h3>
+
+  <p>{{ product.price | money }}</p>
+
+  {% if product.compare_at_price > product.price %}
+    <p><s>{{ product.compare_at_price | money }}</s></p>
+  {% endif %}
+
+  {% unless product.available %}
+    <p>Sold out</p>
+  {% endunless %}
+
+</div>

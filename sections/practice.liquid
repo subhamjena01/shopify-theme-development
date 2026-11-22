@@ -1,14 +1,21 @@
-
-  <div style="padding:40px;">
+<div>
+    <h2>
+        {{ section.settings.heading }}
+    </h2>
+    {% render 'practice-card', product:product %}
+</div>
+  
+  {% comment %}
+   <div style="padding:40px;">
     <h2>{{ section.settings.heading }}</h2>
-    {{ product.featured_image | image_url: width: 300 | image_tag }}
+     {{ product.featured_image | image_url: width: 300 | image_tag }}
     <h2>{{ product.title | upcase }}</h2>
     <p>Price: {{ product.price | money }}</p>
     <p>old price: {{ product.compare_at_price | money }}</p>
     <p>vendor: {{ product.vendor }}</p>
   </div>
 
-  <div style="padding:40px;">
+    <div style="padding:40px;">
     {% if product.available %}
       <p>in stock</p>
     {% else %}
@@ -68,7 +75,7 @@
     {% for variant in product.variants %}
       <p>{{ forloop.index }}.{{ variant.title }}</p>
     {% endfor %}
-  </div>
+  </div> {% endcomment %}
   {% schema %}
   {
     "name": "Practice",
