@@ -103,7 +103,8 @@
       "type": "practice",
       "name": "Practice",
       "settings": {
-        "heading": "hello"
+        "heading": "hello",
+        "my_collection": "automated-collection"
       }
     }
   },
