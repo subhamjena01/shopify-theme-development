@@ -99,17 +99,17 @@
         "padding_bottom": 28
       }
     },
-    "practice_XAz766": {
+    "practice_RDEXfN": {
       "type": "practice",
       "name": "Practice",
       "settings": {
-        "heading": "hello all"
+        "heading": "hello"
       }
     }
   },
   "order": [
     "main",
     "related-products",
-    "practice_XAz766"
+    "practice_RDEXfN"
   ]
 }
