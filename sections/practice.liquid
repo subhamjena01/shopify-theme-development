@@ -5,7 +5,7 @@
   {% assign message = 'Hello from section' %}
   {% comment %} {% render 'practice-card', message: message %} {% endcomment %}
   <p>collection name: {{ section.settings.my_collection.title }}</p>
-  <div style="display:flex; gap:16px;">
+  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
     {% for item in section.settings.my_collection.products limit: 8 %}
       {% comment %} <p>{{ forloop.index }}. {{ item.title }}</p> {% endcomment %}
       {% render 'practice-card', product: item %}
