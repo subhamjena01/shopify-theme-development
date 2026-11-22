@@ -1,4 +1,4 @@
-{% comment %}
+
   <div style="padding:40px;">
     <h2>{{ section.settings.heading }}</h2>
     {{ product.featured_image | image_url: width: 300 | image_tag }}
@@ -87,33 +87,4 @@
     ]
   }
   {% endschema %}
-{% endcomment %}
 
-<div>
-  <h2>
-    {{ section.settings.heading }}
-  </h2>
-
-  {{ product.title }}
-
-  1. we write liquid code in section.
-</div>
-{% schema %}
-{
-  "name": "Practice",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "hello dd"
-    }
-  ],
-
-  "presets": [
-    {
-        "name" : "Heading ss"
-    }
-  ]
-}
-{% endschema %}
