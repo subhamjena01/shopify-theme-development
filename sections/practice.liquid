@@ -30,7 +30,7 @@
     <p>General</p>
   {% endif %}
 
-  <h2>All Images</h2>
+  <h3>All Images</h3>
   {% for images in product.images %}
    {{ images | image_url: width: 400 | image_tag  }} 
   {% endfor %}
