@@ -53,6 +53,12 @@
         <p>total images: {{ product.images.size }}</p>
        <p>total variants: {{ product.variants.size }}</p>
 
+       <p>
+        Tags:
+        {% for tags in product.tags %}
+          {{ tags }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+       </p>
 </div>
 {% schema %}
 {
