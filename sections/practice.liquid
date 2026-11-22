@@ -31,7 +31,7 @@
   {% endif %}
 
   <h3>All Images</h3>
-  {% for images in product.images %}
+  {% for image in product.images %}
     {{ images | image_url: width: 100 | image_tag }}
   {% endfor %}
 
