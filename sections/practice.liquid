@@ -116,7 +116,7 @@
 {% endcomment %}
 
 <div style="padding_top:40px;">
-  <div style="display: grid">
+  <div style = " display: grid; grid-template-columns: repeat(4, 1fr);">
     {% for item in section.settings.collection_1.products limit: 8 %}
       {% render 'product_card', product : item %}
         {% else %}
