@@ -121,7 +121,9 @@
       {{ section.settings.collection_1.title }}
     </div> {% endcomment %}
     <div>
-    <div style="display:grid; ">
+    <div style="display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    gap: 16px;">
       {% for item in section.settings.collection_1.products limit:8 %}
       {% render 'product_card', product : item %}
       {% else %}
