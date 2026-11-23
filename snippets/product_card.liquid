@@ -18,7 +18,7 @@
 </div> {% endcomment %}
 
 <div style="background:#efefef;">
-  {{ product.featured_image | image_url: width: 400 | image_tag  }}
+  {{ product.featured_image | image_url: width: 400 | image_tag: style:'width:100%;' }}
   <h3>{{ product.title }}</h3>
   <p>{{ product.price | money_with_currency}}</p>
   {% if product.compare_at_price > product.price %}
