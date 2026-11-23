@@ -99,18 +99,18 @@
         "padding_bottom": 28
       }
     },
-    "practice_RDEXfN": {
+    "practice_XXUNtG": {
       "type": "practice",
-      "name": "Practice",
+      "name": "My Featured Collection",
       "settings": {
-        "heading": "hello",
-        "my_collection": "automated-collection"
+        "heading": "Our Collection",
+        "collection_1": ""
       }
     }
   },
   "order": [
     "main",
     "related-products",
-    "practice_RDEXfN"
+    "practice_XXUNtG"
   ]
 }
