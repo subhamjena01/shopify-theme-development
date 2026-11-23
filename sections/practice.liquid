@@ -117,22 +117,29 @@
 
 <div style="padding-top:40px;">
   <h2>{{ section.settings.heading }}</h2>
-    {% comment %} <div>
-      {{ section.settings.collection_1.title }}
-    </div> {% endcomment %}
+  {% comment %}
     <div>
-    <div style="display: grid;
-    grid-template-columns: repeat(1, 4fr);
-    gap: 16px;">
-      {% for item in section.settings.collection_1.products limit:8 %}
-      {% render 'product_card', product : item %}
-      {% else %}
-        <p>No Product found, Choose collection</p>
-    {% endfor %}
+      {{ section.settings.collection_1.title }}
     </div>
-</div>
+  {% endcomment %}
+  <div>
+    {% for item in section.settings.collection_1.products limit: 8 %}
+      <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(1, 4fr);
+        gap: 16px;
+      "
+    >{% render 'product_card', product: item %}
 
-{% schema %}
+    {% else %}
+      <p>No Product found, Choose collection</p>
+      </div>
+
+    {%- endfor %}
+  </div>
+
+  {% schema %}
 {
   "name": "practice",
   "settings": [
@@ -143,9 +150,9 @@
       "default": "Our Collection"
     },
     {
-      "type" : "collection",
-      "id" : "collection_1",
-      "label" : "Choose Collection"
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Choose Collection"
     }
   ],
   "presets": [
@@ -154,4 +161,4 @@
     }
   ]
 }
-{% endschema %}
+  {% endschema %}
