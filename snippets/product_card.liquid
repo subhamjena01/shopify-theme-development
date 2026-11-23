@@ -17,7 +17,7 @@
 
 </div> {% endcomment %}
 
-<div style="background:#efefef;">
+<div class="container" style="background:#efefef;">
   {{ product.featured_image | image_url: width: 600 | image_tag: style:'width:100%; object-fit:contain; aspect-ratio:1/1;' }}
   <h3>{{ product.title }}</h3>
   <p>{{ product.price | money_with_currency}}</p>
