@@ -116,7 +116,10 @@
 {% endcomment %}
 
 <div style="padding-top:40px;">
-
+  <h2>{{ section.settings.heading }}</h2>
+    <div>
+      {{ section.settings.my_collection }}
+    </div>
 </div>
 
 {% schema %}
@@ -130,9 +133,9 @@
       "default": "Our Collection"
     },
     {
-      "type": "collection",
-      "id": "collection_id",
-      "label": "Choose Collection"
+      "type" : "collection",
+      "id" : "collection_1",
+      "label" : "Choose Collection"
     }
   ],
   "presets": [
