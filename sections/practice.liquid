@@ -115,29 +115,17 @@
   {% endschema %}
 {% endcomment %}
 
-<div style="padding-top:40px;">
-  <h2>{{ section.settings.heading }}</h2>
-  {% comment %}
-    <div>
-      {{ section.settings.collection_1.title }}
-    </div>
-  {% endcomment %}
-  <div>
+<div style="padding_top:40px;">
+  <div style="">
     {% for item in section.settings.collection_1.products limit: 8 %}
-      <div
-      style="
-        display: grid;
-        grid-template-columns: repeat(1, 4fr);
-        gap: 16px;
-      "
-    >{% render 'product_card', product: item %}
+      {% render 'product_card', product : item %}
+        {% else %}
+          <p>No Product found, choose collection</p>      
+    {% endfor %}
 
-    {% else %}
-      <p>No Product found, Choose collection</p>
-      </div>
-
-    {%- endfor %}
   </div>
+
+</div>
 
   {% schema %}
 {
