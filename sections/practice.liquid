@@ -1,19 +1,21 @@
-{% comment %} <div>
-  <h2>
-    {{ section.settings.heading }}
-  </h2>
-  {% comment %} {% assign message = 'Hello from section' %} {% endcomment %}
-  {% comment %} {% render 'practice-card', message: message %} {% endcomment %}
-  {% comment %} <p>collection name: {{ section.settings.my_collection.title }}</p> {% endcomment %}
-  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
-    {% for item in section.settings.my_collection.products limit: 8 %}
-      {% comment %} <p>{{ forloop.index }}. {{ item.title }}</p> {% endcomment %}
-      {% render 'practice-card', product: item %}
-    {% else %}
-      <p>No products found. Please choose a collection.</p>
-    {% endfor %}
+{% comment %}
+  <div>
+    <h2>
+      {{ section.settings.heading }}
+    </h2>
+    {% comment %} {% assign message = 'Hello from section' %} {% endcomment %}
+    {% comment %} {% render 'practice-card', message: message %} {% endcomment %}
+    {% comment %} <p>collection name: {{ section.settings.my_collection.title }}</p> {% endcomment %}
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+      {% for item in section.settings.my_collection.products limit: 8 %}
+        {% comment %} <p>{{ forloop.index }}. {{ item.title }}</p> {% endcomment %}
+        {% render 'practice-card', product: item %}
+      {% else %}
+        <p>No products found. Please choose a collection.</p>
+      {% endfor %}
+    </div>
   </div>
-</div> {% endcomment %}
+{% endcomment %}
 
 {% comment %}
    <div style="padding:40px;">
@@ -87,27 +89,52 @@
     {% endfor %}
   </div>
 {% endcomment %}
-{% comment %} {% schema %}
+{% comment %}
+  {% schema %}
+  {
+    "name": "Practice",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "hello"
+      },
+      {
+        "type": "collection",
+        "id": "my_collection",
+        "label": "choose collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Practice"
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}
+
+{% schema %}
 {
-  "name": "Practice",
+  "name": "practice",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "hello"
+      "default": "Our Collection"
     },
     {
       "type": "collection",
-      "id": "my_collection",
-      "label": "choose collection"
+      "id": "collection_id",
+      "label": "Choose Collection"
     }
   ],
   "presets": [
     {
-      "name": "Practice"
+      "name": "My featured Collection"
     }
   ]
 }
-{% endschema %} {% endcomment %}
-
+{% endschema %}
