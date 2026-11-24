@@ -23,7 +23,7 @@
       <p>Please choose a collection in the theme editor.</p>
     {% endfor %}
   </div>
-  {% if collection != blank %}
+  {% if featured_collection != blank %}
     <a href="{{ featured_collection.url }}"> View All {{ featured_collection.products_count }} Products</a>
   {% endif %}
 </div>
