@@ -10,20 +10,7 @@
   style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; "
 >
   {%- for product in featured_collection.products limit: section.settings.product_count -%}
-    <a href="{{ product.url }}">
-      {{
-        product.featured_image
-        | image_url: width: 250, height: 250
-        | image_tag: alt: product.title, style: 'object-fit:cover;'
-      }}
-      <h3>{{ product.title | truncate: 40 }}</h3>
-      <p>
-        {% if product.compare_at_price > product.price %}
-          <s>{{ product.compare_at_price | money }}</s>
-        {% endif %}
-        {{ product.price | money }}
-      </p>
-    </a>
+    {% render 'product_card', product: product %}
   {% endfor %}
 </div>
 {% schema %}
