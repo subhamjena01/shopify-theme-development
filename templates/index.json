@@ -63,7 +63,10 @@
       "name": "Home Featured",
       "settings": {
         "heading": "Featured Product",
-        "collection": "automated-collection"
+        "collection": "automated-collection",
+        "product_count": 6,
+        "columns": "4",
+        "show_sale_badge": true
       }
     },
     "1788515042ed9cefd7": {
