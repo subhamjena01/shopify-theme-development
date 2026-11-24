@@ -30,6 +30,9 @@
         <p>Please choose a collection in the theme editor.</p>
   {% endfor %}
 </div>
+{% if collection != blank %}
+    <a href="{{ collection.url }} View All {{ collection.products_count }} Products">
+        {% endif %}
 {% schema %}
 {
   "name": "home featured",
