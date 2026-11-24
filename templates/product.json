@@ -106,11 +106,17 @@
         "heading": "Our Collection",
         "collection_1": "automated-collection"
       }
+    },
+    "home_featured_rW4NJQ": {
+      "type": "home-featured",
+      "name": "Home Featured",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "related-products",
-    "practice_XXUNtG"
+    "practice_XXUNtG",
+    "home_featured_rW4NJQ"
   ]
 }
