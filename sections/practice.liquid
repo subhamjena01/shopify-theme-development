@@ -178,6 +178,8 @@
   {% endif %}
 
 <div>
+  {% unless product.has_only_default_variant %}
+  
   {% for variant in product.variants %}
     <p>{{ variant.title }} - {{ variant.price | money }}</p>
     {% unless variant.available %}
@@ -185,6 +187,7 @@
     {% endunless %}
     
   {% endfor %}
+  {% endunless %}
     
 </div>
 </div>
