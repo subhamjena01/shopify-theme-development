@@ -153,7 +153,9 @@
   {% endschema %} {% endcomment %}
 
 <div class="product_details page-width" >
-
+{{ product.featured_image | image_url: width: 400 | image_tag: alt: product.title  }}
+<h2>{{ product.title }}</h2>
+<p>{{ product.vendor }}</p>
 </div>
 
 {% schema %}{
