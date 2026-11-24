@@ -19,8 +19,9 @@
       <h3>{{ product.title | truncate: 40 }}</h3>
       <p>
         {% if section.settings.show_sale_badge and product.compare_at_price > product.price %}
+          
+          <span style: background: #000000; color: #ffffff>sale</span>
           <s>{{ product.compare_at_price | money }}</s>
-          <span>sale</span>
         {% endif %}
         {{ product.price | money }}
       </p>
