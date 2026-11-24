@@ -176,7 +176,16 @@
   {% else %}
     <p>Out of stock</p>
   {% endif %}
+
+<div>
+  {% for variant in product.variants %}
+    {{ variant.title }}
+    
+  {% endfor %}
+    
 </div>
+</div>
+
 
 {% schema %}
 {
