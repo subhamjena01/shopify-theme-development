@@ -9,7 +9,7 @@
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
       <h3>{{ product.title }}</h3>
-      {{ product.price | money_with_currency }}
+      <p>{{ product.price | money_with_currency }}</p>
     </a>
   {% endfor %}
 </div>
