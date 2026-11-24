@@ -8,7 +8,7 @@
   {% for product in collection.products %}
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
-      <h3>{{ product.title | truncate:40 }}</h3>
+      <h3>{{ product.title | truncate:20 }}</h3>
     </a>
     <p>{{ product.price | money_with_currency }}</p>
   {% endfor %}
