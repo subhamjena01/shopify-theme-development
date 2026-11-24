@@ -62,7 +62,8 @@
       "type": "home-featured",
       "name": "Home Featured",
       "settings": {
-        "heading": "Featured Product"
+        "heading": "Featured Product",
+        "collection": "automated-collection"
       }
     },
     "1788515042ed9cefd7": {
