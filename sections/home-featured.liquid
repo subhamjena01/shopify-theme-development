@@ -1,15 +1,17 @@
 {% assign collection = section.settings.collection %}
 <div class="home_featured page-width" style="padding-top:40px;">
-    {%- if section.settings.heading != blank -%}
-      <h2>{{ section.settings.heading }}</h2>
-    {% endif %}   
+  {%- if section.settings.heading != blank -%}
+    <h2>{{ section.settings.heading }}</h2>
+  {% endif %}
 </div>
 <div class="page-width">
-{% for product in collection.products %}
+  {% for product in collection.products %}
     <a href="{{ product.url }}">
-        {{ product.featured_image | image_url: width: 500 | image_tag: alt:product.title }}
-  <h3>{{ product.title }}</h3>
-{% endfor %}
+      {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
+      <h3>{{ product.title }}</h3>
+      {{ product.price | money_with_currency }}
+    </a>
+  {% endfor %}
 </div>
 {% schema %}
 {
@@ -22,9 +24,9 @@
       "default": "Featured Product"
     },
     {
-        "type": "collection",
-        "id": "collection",
-        "label": "Choose Collection"
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose Collection"
     }
   ],
   "presets": [
