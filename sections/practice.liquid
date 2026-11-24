@@ -181,8 +181,8 @@
   {% unless product.has_only_default_variant %}
   
   {% for variant in product.variants %}
-    <p>{{ variant.title }} - {{ variant.price | money }}</p>
-    <span>{% unless variant.available %} Sold Out {% endunless %}</span>
+    <p>{{ variant.title }} - {{ variant.price | money }}
+    <span>{% unless variant.available %} Sold Out {% endunless %}</span></p>
     
   {% endfor %}
   {% endunless %}
