@@ -26,6 +26,8 @@
         {{ product.price | money }}
       </p>
     </a>
+    {% else %}
+        <p>Please choose a collection in the theme editor.</p>
   {% endfor %}
 </div>
 {% schema %}
