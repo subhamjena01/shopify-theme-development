@@ -156,6 +156,15 @@
 {{ product.featured_image | image_url: width: 400 | image_tag: alt: product.title  }}
 <h2>{{ product.title }}</h2>
 <p>vendor : {{ product.vendor }}</p>
+<p>{{ product.price }}
+  {%- if product.compare_at_price > product.price -%}
+<span>{{ product.compare_at_price }}</span>
+{% assign saving = product.compare_at_price | minus: product.price %}
+{% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price%}
+save {{ saving }}%  
+  {%- endif -%}
+</p>
+
 </div>
 
 {% schema %}{
