@@ -161,7 +161,7 @@
 <s>{{ product.compare_at_price | money }}</s>
 {% assign saving = product.compare_at_price | minus: product.price %}
 {% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price%}
-save {{ saving | round:2}}%  
+save {{ percent | round:2}}%  
   {%- endif -%}
 </p>
 
