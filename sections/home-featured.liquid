@@ -10,11 +10,12 @@
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
       <h3>{{ product.title | truncate:40 }}</h3>
     </a>
-    {% if product.compare_at_price > product.price %}
+    <p>{% if product.compare_at_price > product.price %}
         <s>{{ product.compare_at_price | money}}</s>
     {% endif %}
     {{ product.price | money }}
   {% endfor %}
+</p>
 </div>
 {% schema %}
 {
