@@ -11,9 +11,9 @@
       <h3>{{ product.title | truncate:40 }}</h3>
     </a>
     {% if product.compare_at_price > product.price %}
-        <s>{{ product.compare_at_price | money}}</s>
+       <p> <s>{{ product.compare_at_price | money}}</s>
     {% endif %}
-    <p>{{ product.price | money }}</p>
+    {{ product.price | money }}</p>
   {% endfor %}
 </div>
 {% schema %}
