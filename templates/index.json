@@ -64,8 +64,8 @@
       "settings": {
         "heading": "Featured Product",
         "collection": "automated-collection",
-        "product_count": 6,
-        "columns": "4",
+        "product_count": 3,
+        "columns": "3",
         "show_sale_badge": true
       }
     },
