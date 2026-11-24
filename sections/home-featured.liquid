@@ -4,20 +4,20 @@
     <h2>{{ section.settings.heading }}</h2>
   {% endif %}
 </div>
+
 <div class="page-width" style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; }">
   {% for product in collection.products limit: section.settings.product_count %}
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
-      <h3>{{ product.title | truncate:40 }}</h3>
+      <h3>{{ product.title | truncate: 40 }}</h3>
     </a>
-    <p>{% if product.compare_at_price > product.price %}
-        <s>{{ product.compare_at_price | money}}</s>
-    {% endif %}
-    {{ product.price | money }}
+    <p>
+      {% if product.compare_at_price > product.price %}
+        <s>{{ product.compare_at_price | money }}</s>
+      {% endif %}
+      {{ product.price | money }}
     </p>
   {% endfor %}
-
-
 </div>
 {% schema %}
 {
@@ -35,23 +35,23 @@
       "label": "Choose Collection"
     },
     {
-        "type": "range",
-        "id": "product_count",
-        "label": "Number of Product",
-        "min": 2, 
-        "max": 8,
-        "default": 4 
+      "type": "range",
+      "id": "product_count",
+      "label": "Number of Product",
+      "min": 2,
+      "max": 8,
+      "default": 4
     },
     {
-        "type": "select",
-        "id": "columns",
-        "label": "Product per row",
-        "options": [
-            {"value": "2", "label": "2"},
-            {"value": "3", "label": "3"},
-            {"value": "4", "label": "4"}
-        ],
-        "default": "4"
+      "type": "select",
+      "id": "columns",
+      "label": "Product per row",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
     }
   ],
   "presets": [
