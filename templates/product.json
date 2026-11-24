@@ -101,6 +101,7 @@
     },
     "practice_pBB8aK": {
       "type": "practice",
+      "disabled": true,
       "name": "Product Details",
       "settings": {}
     }
