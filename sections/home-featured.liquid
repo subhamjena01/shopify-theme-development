@@ -4,36 +4,29 @@
     <h2>{{ section.settings.heading }}</h2>
   {% endif %}
 
-
-<div
-  class="page-width"
-  style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; "
->
-  {%- for product in featured_collection.products limit: section.settings.product_count -%}
-    <a href="{{ product.url }}">
-      {{
-        product.featured_image
-        | image_url: width: 250, height: 250
-        | image_tag: alt: product.title, style: 'object-fit:cover;'
-      }}
-      <h3>{{ product.title | truncate: 40 }}</h3>
-      <p>
-        {% if section.settings.show_sale_badge and product.compare_at_price > product.price %}
-          
-          <span style= "background-color: #000000; color: #ffffff;">sale</span>
-          <s>{{ product.compare_at_price | money }}</s>
-        {% endif %}
-        {{ product.price | money }}
-      </p>
-    </a>
+  <div class="page-width" style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; ">
+    {%- for product in featured_collection.products limit: section.settings.product_count -%}
+      <a href="{{ product.url }}">
+        {{
+          product.featured_image | image_url: width: 250, height: 250 | image_tag: alt: product.title, style: 'object-fit:cover;'
+        }}
+        <h3>{{ product.title | truncate: 40 }}</h3>
+        <p>
+          {% if section.settings.show_sale_badge and product.compare_at_price > product.price %}
+            <span style="background-color: #000000; color: #ffffff;">sale</span>
+            <s>{{ product.compare_at_price | money }}</s>
+          {% endif %}
+          {{ product.price | money }}
+        </p>
+      </a>
     {% else %}
-        <p>Please choose a collection in the theme editor.</p>
-  {% endfor %}
-</div>
-{% if collection != blank %}
+      <p>Please choose a collection in the theme editor.</p>
+    {% endfor %}
+  </div>
+  {% if collection != blank %}
     <a href="{{ collection.url }}"> View All {{ collection.products_count }} Products</a>
-        {% endif %}
-    </div>
+  {% endif %}
+</div>
 {% schema %}
 {
   "name": "home featured",
@@ -70,10 +63,10 @@
       "default": "4"
     },
     {
-        "type": "checkbox",
-        "id": "show_sale_badge",
-        "label": "Show Sale Badge",
-        "default": true
+      "type": "checkbox",
+      "id": "show_sale_badge",
+      "label": "Show Sale Badge",
+      "default": true
     }
   ],
   "presets": [
