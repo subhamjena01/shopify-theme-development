@@ -1,4 +1,4 @@
-{% assign collection = section.settings.collection %}
+{% assign featured_collection = section.settings.collection %}
 <div class="home_featured page-width" style="padding-top:40px;">
   {%- if section.settings.heading != blank -%}
     <h2>{{ section.settings.heading }}</h2>
@@ -6,7 +6,7 @@
 </div>
 
 <div class="page-width" style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; ">
-  {%- for product in collection.products limit: section.settings.product_count -%}
+  {%- for product in featured_.products limit: section.settings.product_count -%}
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
       <h3>{{ product.title | truncate: 40 }}</h3>
