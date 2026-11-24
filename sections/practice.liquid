@@ -179,7 +179,10 @@
 
 <div>
   {% for variant in product.variants %}
-    <p>{{ variant.title }} - {{ variant.price }}</p>
+    <p>{{ variant.title }} - {{ variant.price | money }}</p>
+    {% unless variant.available %}
+      Sold Out
+    {% endunless %}
     
   {% endfor %}
     
