@@ -5,7 +5,7 @@
   {% endif %}
 </div>
 
-<div class="page-width" style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; }">
+<div class="page-width" style="display:grid; grid-template-columns: repeat({{ section.settings.columns }}, 1fr); gap:20px; ">
   {% for product in collection.products limit: section.settings.product_count %}
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
