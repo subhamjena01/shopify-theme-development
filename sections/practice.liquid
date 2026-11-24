@@ -115,7 +115,7 @@
   {% endschema %}
 {% endcomment %}
 
-<div class="page-width" style="padding_top:40px;">
+{% comment %} <div class="page-width" style="padding_top:40px;">
   <h2>{{ section.settings.heading }}</h2>
   <div class="page-width" style = " display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
     {% for item in section.settings.collection_1.products limit: 8 %}
@@ -150,4 +150,15 @@
     }
   ]
 }
-  {% endschema %}
+  {% endschema %} {% endcomment %}
+
+<div class="product_details page-width" >
+
+</div>
+
+{% schema %}{
+"name": "Product details",
+"settings":[],
+"presets": [{"name": "Product Details"}]
+}
+{% endschema %}
