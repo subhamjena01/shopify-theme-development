@@ -60,6 +60,7 @@
     },
     "home_featured_WfXAQK": {
       "type": "home-featured",
+      "disabled": true,
       "name": "Home Featured",
       "settings": {
         "heading": "Featured Product",
