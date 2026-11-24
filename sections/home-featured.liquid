@@ -20,7 +20,7 @@
       <p>
         {% if section.settings.show_sale_badge and product.compare_at_price > product.price %}
           <s>{{ product.compare_at_price | money }}</s>
-          <p>sale</p>
+          <span>sale</span>
         {% endif %}
         {{ product.price | money }}
       </p>
