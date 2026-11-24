@@ -99,11 +99,6 @@
         "padding_bottom": 28
       }
     },
-    "practice_XXUNtG": {
-      "type": "practice",
-      "name": "My Featured Collection",
-      "settings": {}
-    },
     "practice_pBB8aK": {
       "type": "practice",
       "name": "Product Details",
@@ -113,7 +108,6 @@
   "order": [
     "main",
     "related-products",
-    "practice_XXUNtG",
     "practice_pBB8aK"
   ]
 }
