@@ -4,6 +4,10 @@
       <h2>{{ section.settings.heading }}</h2>
     {% endif %}   
 </div>
+{% for product in collection.product %}
+    {{ product.title }}
+  
+{% endfor %}
 
 {% schema %}
 {
