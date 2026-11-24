@@ -115,61 +115,73 @@
   {% endschema %}
 {% endcomment %}
 
-{% comment %} <div class="page-width" style="padding_top:40px;">
-  <h2>{{ section.settings.heading }}</h2>
-  <div class="page-width" style = " display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-    {% for item in section.settings.collection_1.products limit: 8 %}
-      {% render 'product_card', product : item %}
-        {% else %}
-          <p>No Product found, choose collection</p>      
-    {% endfor %}
+{% comment %}
+  <div class="page-width" style="padding_top:40px;">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="page-width" style = " display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      {% for item in section.settings.collection_1.products limit: 8 %}
+        {% render 'product_card', product : item %}
+          {% else %}
+            <p>No Product found, choose collection</p>
+      {% endfor %}
+
+    </div>
 
   </div>
 
+    {% schema %}
+  {
+    "name": "practice",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Our Collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Choose Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "My Featured Collection"
+      }
+    ]
+  }
+    {% endschema %}
+{% endcomment %}
+
+<div class="product_details page-width">
+  {{ product.featured_image | image_url: width: 400 | image_tag: alt: product.title }}
+  <h2>{{ product.title }}</h2>
+  <p>vendor : {{ product.vendor }}</p>
+  <p>
+    {{ product.price | money }}
+    {%- if product.compare_at_price > product.price -%}
+      <s>{{ product.compare_at_price | money }}</s>
+      {% assign saving = product.compare_at_price | minus: product.price %}
+      {% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price %}
+      save {{ percent | round: 2 }}%
+
+    {% else %}
+      {{ product.price | money }}
+    {%- endif -%}
+  </p>
+
+  {% if product.available %}
+    <p>In Stock</p>
+  {% else %}
+    <p>Out of stock</p>
+  {% endif %}
 </div>
 
-  {% schema %}
+{% schema %}
 {
-  "name": "practice",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Our Collection"
-    },
-    {
-      "type": "collection",
-      "id": "collection_1",
-      "label": "Choose Collection"
-    }
-  ],
-  "presets": [
-    {
-      "name": "My Featured Collection"
-    }
-  ]
-}
-  {% endschema %} {% endcomment %}
-
-<div class="product_details page-width" >
-{{ product.featured_image | image_url: width: 400 | image_tag: alt: product.title  }}
-<h2>{{ product.title }}</h2>
-<p>vendor : {{ product.vendor }}</p>
-<p>{{ product.price | money }}
-  {%- if product.compare_at_price > product.price -%}
-<s>{{ product.compare_at_price | money }}</s>
-{% assign saving = product.compare_at_price | minus: product.price %}
-{% assign percent = saving | times: 100.0 | divided_by: product.compare_at_price%}
-save {{ percent | round:2}}%  
-  {%- endif -%}
-</p>
-
-</div>
-
-{% schema %}{
-"name": "Product details",
-"settings":[],
-"presets": [{"name": "Product Details"}]
+  "name": "Product details",
+  "settings": [],
+  "presets": [{ "name": "Product Details" }]
 }
 {% endschema %}
