@@ -5,7 +5,7 @@
   {% endif %}
 </div>
 <div class="page-width">
-  {% for product in collection.products limit: 4 %}
+  {% for product in collection.products limit: section.settings.product_count %}
     <a href="{{ product.url }}">
       {{ product.featured_image | image_url: width: 500 | image_tag: alt: product.title }}
       <h3>{{ product.title | truncate:40 }}</h3>
@@ -33,6 +33,14 @@
       "type": "collection",
       "id": "collection",
       "label": "Choose Collection"
+    },
+    {
+        "type": "range",
+        "id": "product_count",
+        "label": "Number of Product",
+        "min": 2, 
+        "max": 8,
+        "default": 4 
     }
   ],
   "presets": [
